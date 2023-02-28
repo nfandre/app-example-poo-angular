@@ -1,0 +1,11 @@
+import { Conta } from "./conta";
+
+export class ContaPoupanca extends Conta {
+    constructor(numeroConta: number, titular: string) {
+        super(numeroConta, titular);
+    }
+
+    public gerarTaxa(): void {
+        this.saldo += this.saldo * .006;
+    }
+}
