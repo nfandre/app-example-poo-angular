@@ -8,8 +8,8 @@ import { ContaComponent } from '../conta/conta.component';
 })
 export class ContaPoupancaComponent extends ContaComponent implements OnInit {
 
-  constructor(@Inject('numeroConta') numeroConta: number,  @Inject('titular')  titular: string) {
-    super(numeroConta, titular);
+  constructor() {
+    super();
   }
 
   ngOnInit(): void {
@@ -17,5 +17,4 @@ export class ContaPoupancaComponent extends ContaComponent implements OnInit {
   public  gerarTaxa(): void {
     this.saldo += this.saldo * .006;
   }
-
 }

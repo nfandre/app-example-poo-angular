@@ -8,8 +8,8 @@ import { ContaComponent } from '../conta/conta.component';
 })
 export class ContaCorrenteComponent extends ContaComponent implements OnInit {
 
-  constructor(@Inject('numeroConta') numeroConta: number,  @Inject('titular')  titular: string) {
-    super(numeroConta, titular);
+  constructor() {
+    super();
   }
 
   ngOnInit(): void {
@@ -20,7 +20,8 @@ export class ContaCorrenteComponent extends ContaComponent implements OnInit {
   // Override on typeScript
   public sacar(valor: number, cobraCPMF?: boolean): boolean{
     if (cobraCPMF) {
-      return this.sacar(valor + valor * .0038);
+      this.saldo = this.saldo - valor - ( valor * .0038);
+      return true;
     }
     else {
       return this.sacar(valor);

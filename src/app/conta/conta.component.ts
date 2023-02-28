@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-conta',
@@ -7,20 +7,18 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class ContaComponent implements OnInit {
 
-  numeroConta: number;
-  titular: string;
-  saldo: number = 0;
+  @Input() numeroConta: number = 0;
+  @Input()  titular: string = '';
+  @Input() saldo: number = 1000;
 
-  constructor(@Inject('numeroConta') numeroConta: number,  @Inject('titular')  titular: string) {
-    this.numeroConta = numeroConta;
-    this.titular = titular;
-   }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   public sacar(valor: number): boolean {
-    if (valor < this.saldo) {
+    if (valor < this.saldo) {      
       this.saldo -= valor;
          return true;
       }
