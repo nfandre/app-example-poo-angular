@@ -1,15 +1,15 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ContaComponent } from '../conta/conta.component';
+import { Component, OnInit } from '@angular/core';
+import { Conta } from '../models/conta';
 
 @Component({
   selector: 'app-conta-corrente',
   templateUrl: './conta-corrente.component.html',
   styleUrls: ['./conta-corrente.component.scss']
 })
-export class ContaCorrenteComponent extends ContaComponent implements OnInit {
+export class ContaCorrenteComponent extends Conta implements OnInit {
 
   constructor() {
-    super();
+    super( 1010, 'Lucas', 1000);
   }
 
   ngOnInit(): void {
@@ -18,13 +18,14 @@ export class ContaCorrenteComponent extends ContaComponent implements OnInit {
     this.saldo += this.saldo * 15.90;
   }
   // Override on typeScript
-  public sacar(valor: number, cobraCPMF?: boolean): boolean{
+  public override sacar(valor: number, cobraCPMF?: boolean): boolean{
     if (cobraCPMF) {
       this.saldo = this.saldo - valor - ( valor * .0038);
       return true;
     }
     else {
-      return this.sacar(valor);
+      this.saldo -= valor;
+      return true;
     }
   }
 }

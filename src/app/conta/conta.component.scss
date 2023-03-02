@@ -1,0 +1,90 @@
+.card {
+    max-width: 300px;
+    border-radius: 5px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.card_poupanca {
+    border: 2px solid  #ff9800
+}
+.card_corrente {
+    border: 2px solid #2196F3;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Green */
+  .success {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+  .success:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Blue */
+  .info {
+    border-color: #2196F3;
+    color: dodgerblue
+  }
+  
+  .info:hover {
+    background: #2196F3;
+    color: white;
+  }
+  
+  /* Orange */
+  .warning {
+    border-color: #ff9800;
+    color: orange;
+  }
+  
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }
+  
+  /* Red */
+  .danger {
+    border-color: #f44336;
+    color: red
+  }
+  
+  .danger:hover {
+    background: #f44336;
+    color: white;
+  }
+  
+  /* Gray */
+  .default {
+    border-color: #e7e7e7;
+    color: black;
+  }
+  
+  .default:hover {
+    background: #e7e7e7;
+  }
+
+  .btn {
+    border-radius: 5px;
+  }

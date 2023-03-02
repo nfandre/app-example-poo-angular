@@ -1,3 +1,10 @@
-<p>Conta poupança</p>
-<button (click)="sacar(100)"> sacar</button>
-{{saldo}}
+<app-conta
+    tipoConta="poupanca"
+    [numeroConta]="numeroConta"
+    [titular]="titular"
+    [saldo]="saldo"
+    (sacar)="sacar(100)"
+
+>
+
+</app-conta>

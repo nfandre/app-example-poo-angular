@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-conta',
@@ -8,40 +8,16 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 export class ContaComponent implements OnInit {
 
   @Input() numeroConta: number = 0;
-  @Input()  titular: string = '';
-  @Input() saldo: number = 1000;
+  @Input() tipoConta: string = 'corrente | poupanca';
+  @Input() titular: string = '';
+  @Input() saldo: number = 0;
+  @Input() class: string = '';
+  @Output() sacar: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
-
-  public sacar(valor: number): boolean {
-    if (valor < this.saldo) {      
-      this.saldo -= valor;
-         return true;
-      }
-      return false;
-  }
-  
-  public depositar(valor: number) : boolean {
-    this.saldo += valor;
-    return true;
-  }
-
-  public transferir(contaDestino: any, valor: number){ 
-    const retirou = this.sacar(valor);
-    if (retirou) {
-       contaDestino.depositar(valor);
-       return true;
-    }
-    return false;
-  }
-
-  public getSaldo(): number {
-    return this.saldo;
-  }
-  public  gerarTaxa(): void {}
 
 }

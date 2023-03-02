@@ -1,1 +1,17 @@
-<p>conta works!</p>
+<div class="card" [ngClass]="{
+    'card_poupanca': tipoConta === 'poupanca',
+    'card_corrente': tipoConta === 'corrente'
+}">
+    <div class="container">
+      <h4><b>Conta {{tipoConta}} : {{numeroConta}}</b></h4>
+      <p>Titular: {{titular}}</p>
+      <p>Saldo: {{saldo}}</p>
+
+      <button class="btn" [ngClass]="{
+        'warning': tipoConta === 'poupanca',
+        'info': tipoConta === 'corrente'
+    }"
+    (click)="sacar.emit()" >Sacar</button>
+
+    </div>
+</div>

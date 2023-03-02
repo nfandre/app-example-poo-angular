@@ -1,13 +1,13 @@
 export class Conta {
   // private
-  #numeroConta: number;
+  numeroConta: number;
   titular: string;
   saldo: number;
 
-  constructor(numeroConta: number, titular: string) {
-    this.#numeroConta = numeroConta;
+  constructor(numeroConta: number, titular: string, saldo: number) {
+    this.numeroConta = numeroConta;
     this.titular = titular;
-    this.saldo = 0;
+    this.saldo = saldo;
   }
 
 

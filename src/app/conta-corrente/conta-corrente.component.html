@@ -1,3 +1,9 @@
-<p>Conta corrente</p>
-<button (click)="sacar(100, true)"> sacar </button>
-{{saldo}}
+<app-conta
+    tipoConta="corrente"
+    [numeroConta]="numeroConta"
+    [titular]="titular"
+    [saldo]="saldo"
+    (sacar)="sacar(100, true)"
+>
+
+</app-conta>
